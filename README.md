@@ -1,10 +1,10 @@
-# VR Orienteering
+# Compass Run
 
 Proiect pentru o experiență de orientare în realitate virtuală.
 
 ## Descriere
 
-Acest repository conține fișierele proiectului **VR-Orienteering**. Codul și documentația vor fi adăugate pe măsură ce proiectul este dezvoltat.
+Acest repository conține fișierele proiectului **Compass Run**. Codul și documentația vor fi adăugate pe măsură ce proiectul este dezvoltat.
 
 ## Repository
 
