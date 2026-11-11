@@ -1,0 +1,6 @@
+{
+  "name": "CompassRun.Checkpoints",
+  "rootNamespace": "CompassRun.Checkpoints",
+  "references": ["Unity.XR.Interaction.Toolkit"],
+  "autoReferenced": true
+}

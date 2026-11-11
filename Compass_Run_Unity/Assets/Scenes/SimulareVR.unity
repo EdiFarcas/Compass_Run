@@ -321,11 +321,11 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: db8561df729e38c478b839f4634c17df, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 90
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 35
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -2097,14 +2097,16 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 6bbe706ca968a00448a73a89911a7031, type: 3}
   - {fileID: 919132149155446097, guid: 3e1e8bb939a7c354cae552de0c151f68, type: 3}
   - {fileID: 919132149155446097, guid: a68e873385a05f94382d5de6fd07dfbf, type: 3}
-  treeCount: 600
+  treeCount: 35
   grassTexture: {fileID: 2800000, guid: d56b51d4fbf86ef4eaff7fcf38fb0e89, type: 3}
   grassDensity: 4
   playerRig: {fileID: 90887035}
   moveToStart:
   - {fileID: 964315889}
+  firstCheckpointCabin: {fileID: 596778667}
+  firstCheckpointDistance: 4
   startGatePrefab: {fileID: 0}
-  checkpointPrefab: {fileID: 592620643}
+  checkpointPrefab: {fileID: 2582569736805678623, guid: 8d1c55b3681e44ebd858b2b840b35a37, type: 3}
   finishPrefab: {fileID: 0}
   deadEndBlockerPrefab: {fileID: 0}
   hazardZonePrefab: {fileID: 0}
@@ -4197,6 +4199,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -391268320553695201, guid: 80c6f1b5f87d07b4dadf96f3530984a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1259901937}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 80c6f1b5f87d07b4dadf96f3530984a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1847000001}
   m_SourcePrefab: {fileID: 100100000, guid: 80c6f1b5f87d07b4dadf96f3530984a4, type: 3}
 --- !u!4 &1832079796 stripped
 Transform:
@@ -4446,6 +4451,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645698883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6365f8f4ec645e9943b67e4c524209, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: CompassRun.Checkpoints::CompassRun.Checkpoints.CheckpointRing
+  ringId: CompassRunRing
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -46,6 +46,9 @@ public class TrailGenerator : MonoBehaviour
     public Transform playerRig;          // trage aici XR Origin
     public Transform[] moveToStart;      // obiectele de la cabană
 
+    public Transform firstCheckpointCabin;
+    [Min(0f)] public float firstCheckpointDistance = 4f;
+
     [Header("Prefab-uri (opțional)")]
     public GameObject startGatePrefab;
     public GameObject checkpointPrefab;   
@@ -85,8 +88,8 @@ public class TrailGenerator : MonoBehaviour
             PlantTrees();
             GrowGrass();
         }
-        SpawnProps();
         PlaceStartArea();
+        SpawnProps();
     }
 
     void PlaceStartArea()
@@ -468,7 +471,21 @@ public class TrailGenerator : MonoBehaviour
     void SpawnProps()
     {
         Spawn(startGatePrefab, keyPoints[0], (keyPoints[1] - keyPoints[0]).normalized, "StartGate");
-        for (int i = 1; i <= 3; i++) Spawn(checkpointPrefab, keyPoints[i], Vector3.forward, "CP" + i);
+        Vector3 firstCheckpoint = keyPoints[1];
+        Vector3 firstCheckpointForward = Vector3.forward;
+        if (firstCheckpointCabin)
+        {
+            Vector3 cabinPosition = firstCheckpointCabin.position;
+            Vector3 towardStart = Ground(keyPoints[0]) - cabinPosition;
+            towardStart.y = 0f;
+            if (towardStart.sqrMagnitude > 0.001f)
+                firstCheckpointForward = towardStart.normalized;
+
+            Vector3 worldPosition = cabinPosition + firstCheckpointForward * firstCheckpointDistance;
+            firstCheckpoint = transform.InverseTransformPoint(worldPosition);
+        }
+        Spawn(checkpointPrefab, firstCheckpoint, firstCheckpointForward, "CP1");
+        for (int i = 2; i <= 3; i++) Spawn(checkpointPrefab, keyPoints[i], Vector3.forward, "CP" + i);
         Spawn(finishPrefab, keyPoints[4], Vector3.forward, "Finish");
 
         foreach (var t in trails)

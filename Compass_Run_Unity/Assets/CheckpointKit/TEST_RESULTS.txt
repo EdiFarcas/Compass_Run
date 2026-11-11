@@ -1,0 +1,7 @@
+Unity 6000.6.4f1 / XR Interaction Toolkit 3.6.1
+Play Mode validation, 2026-11-11
+
+PASS: ring-only filter; takeover from controller; exact attach position and rotation; no theft from another socket; controller can retrieve ring without recapture; completion survives removal; automatic physics overlap capture; one validation event; occupied socket rejects second ring.
+
+Portable dependency audit: PASS. Prefabs and materials reference only this kit or installed Unity packages. No original scene or model assets required.
+Tests exercised XR APIs and physics overlap in an isolated scene; no real headset test performed.
