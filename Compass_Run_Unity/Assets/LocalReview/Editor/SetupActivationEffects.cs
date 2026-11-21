@@ -12,7 +12,7 @@ public static class SetupActivationEffects
     [MenuItem("Tools/Compass Run/Setup Whistle and Spray Effects")]
     static void Setup()
     {
-        if(Application.isPlaying||EditorSceneManager.GetActiveScene().name!="SimulareVR_Local")return;
+        if(Application.isPlaying||(EditorSceneManager.GetActiveScene().name!="SimulareVR_Local" && EditorSceneManager.GetActiveScene().name!="SimulareVR"))return;
         var whistle=Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None).FirstOrDefault(g=>g.name=="Fluier");
         var spray=Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None).FirstOrDefault(g=>g.name=="Spray_Ursi");
         if(!whistle||!spray||spray.transform.Find("Spray_Fum"))return;
@@ -32,8 +32,11 @@ public static class SetupActivationEffects
             {
                 if(!materials[i]||!(materials[i].name.Contains("Nozzle")||materials[i].name.Contains("Black")))continue;
                 var cap=filter.sharedMesh.GetSubMesh(i).bounds;var center=filter.sharedMesh.bounds.center;
-                var delta=cap.center-center;if(delta.sqrMagnitude<.000001f)continue;
-                axis=filter.transform.TransformDirection(delta.normalized).normalized;point=filter.transform.TransformPoint(cap.center)+axis*.015f;
+                var vertices=filter.sharedMesh.vertices;var indices=filter.sharedMesh.GetTriangles(i);
+                Vector3 nozzleCenter=Vector3.zero;foreach(var index in indices)nozzleCenter+=vertices[index];
+                if(indices.Length>0)nozzleCenter/=indices.Length;else nozzleCenter=cap.center;
+                var delta=nozzleCenter-center;if(delta.sqrMagnitude<.000001f)continue;
+                axis=filter.transform.TransformDirection(delta.normalized).normalized;point=filter.transform.TransformPoint(nozzleCenter)+axis*.015f;
             }
         }
         smoke.transform.position=point;smoke.transform.rotation=Quaternion.LookRotation(axis);
