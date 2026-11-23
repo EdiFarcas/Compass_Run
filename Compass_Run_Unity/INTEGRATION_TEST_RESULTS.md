@@ -44,3 +44,7 @@ Verificat vizual: vegetația/stâncile noi sunt afișate, iar iarba este verde d
 Limite: evenimentele Activate/Deactivate și validarea CP1 au fost invocate programatic. Aceste verificări nu înlocuiesc parcurgerea manuală cu XR Device Simulator sau testarea pe cască. Rămâne de verificat manual apucarea/eliberarea inelului în socket, mersul pe traseu, ceața CP1–CP2, lacurile și performanța pe calculatorul utilizatorului.
 
 Scriptul temporar de validare a fost mutat în Backups/IntegrationValidation-2026-11-23, în afara Assets, pentru a nu porni automat în proiect. Schimbările locale de dinaintea integrării (teren, material spray, soluție) sunt păstrate în stash-ul „Preserve local Unity generated changes before branch integration 2026-11-23”; nu au fost reaplicate peste terenul nou.
+
+## Configurația cerută în capturile utilizatorului (după validarea de mai sus)
+
+Scena a fost actualizată cu SM_RockWall_01/02, scară 3–5; arbori SM_Tree_Color, SM_Tree_Green, SM_Tree_Color (inclusiv repetarea din captură), treeCount 3500; grassCount 17000 și grassYOffset 0; un singur SM_FoliageBush_01, bushCount 500 și bushYOffset 0; willowPrefab SM_Tree_Color_2. Celelalte valori vizibile în capturi corespund setărilor scenei. Referințele sunt către obiectele rădăcină ale prefab-urilor și GUID-urile existente. Această densitate nouă trebuie verificată în proba manuală; rezultatele runtime de mai sus au fost obținute înaintea creșterii densității.

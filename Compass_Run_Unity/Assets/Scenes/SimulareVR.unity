@@ -4634,11 +4634,10 @@ MonoBehaviour:
   rockStartHeight: 24
   rockBlendRange: 6
   borderRockPrefabs:
-  - {fileID: 1899658803233297863, guid: 5f5ff8953ebc2b14e93f9c1ab7cce246, type: 3}
-  - {fileID: 4030783830249172187, guid: b356054ae213e4c46aed9aa632df1810, type: 3}
-  - {fileID: 8394424145546492890, guid: e50124c9152a7c844a3a1d83ded10153, type: 3}
+  - {fileID: 3794085564904970108, guid: e90adbfcae3c7e344bb98adf068995bf, type: 3}
+  - {fileID: 5725866631190738793, guid: d559d0654d8a203419aa3a17350cee76, type: 3}
   borderRockSpacing: 10
-  borderRockScale: {x: 4, y: 7}
+  borderRockScale: {x: 3, y: 5}
   borderRockSinkDepth: 2
   addInvisibleBoundaryWalls: 1
   waterPrefab: {fileID: 3669502052993792409, guid: c482d332508309d41880432f09e797f0, type: 3}
@@ -4648,25 +4647,24 @@ MonoBehaviour:
   lakeDepth: 4.5
   lakeShoreBlend: 14
   treePrefabs:
-  - {fileID: 8125826686420605830, guid: aed23224de7b14947ad004c65b7fd75b, type: 3}
-  - {fileID: 2534985353366469434, guid: 521a291a4b0576d4493d6bc120fa5da4, type: 3}
+  - {fileID: 3416791387851911863, guid: fd3d5e10f7bc69244957ff87cd421066, type: 3}
   - {fileID: 8635182375784086607, guid: e0e9e3adb83d9ca4c8325210b7cb6b7e, type: 3}
-  treeCount: 600
+  - {fileID: 3416791387851911863, guid: fd3d5e10f7bc69244957ff87cd421066, type: 3}
+  treeCount: 3500
   trailSideTrees: 250
   minTreeDistFromTrail: 2.6
   maxTrailSideDist: 6.5
   grassPrefab: {fileID: 4066729445286633768, guid: 0708f3fff5c2989419f887025f5b250c, type: 3}
-  grassCount: 15000
+  grassCount: 17000
   grassScale: {x: 1.5, y: 2.5}
-  grassYOffset: -0.15
+  grassYOffset: 0
   bushPrefabs:
   - {fileID: 5131822714061777542, guid: af6679b6119c02a4cbcd9c6e43c7a907, type: 3}
-  - {fileID: 4308898472460551513, guid: df1a62491df7dfa46a3f5c12dfada00a, type: 3}
-  bushCount: 350
+  bushCount: 500
   bushScale: {x: 0.8, y: 1.4}
-  bushYOffset: -0.1
+  bushYOffset: 0
   minBushDistFromTrail: 2
-  willowPrefab: {fileID: 0}
+  willowPrefab: {fileID: 1149956684023626284, guid: 684e88af3abb8004ea97fab4855bdec6, type: 3}
   maxWillows: 20
   willowMaxHeightAboveWater: 2.5
   willowChanceNearWater: 0.85
