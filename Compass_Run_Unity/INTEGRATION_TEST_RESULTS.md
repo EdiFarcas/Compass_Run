@@ -48,3 +48,30 @@ Scriptul temporar de validare a fost mutat în Backups/IntegrationValidation-202
 ## Configurația cerută în capturile utilizatorului (după validarea de mai sus)
 
 Scena a fost actualizată cu SM_RockWall_01/02, scară 3–5; arbori SM_Tree_Color, SM_Tree_Green, SM_Tree_Color (inclusiv repetarea din captură), treeCount 3500; grassCount 17000 și grassYOffset 0; un singur SM_FoliageBush_01, bushCount 500 și bushYOffset 0; willowPrefab SM_Tree_Color_2. Celelalte valori vizibile în capturi corespund setărilor scenei. Referințele sunt către obiectele rădăcină ale prefab-urilor și GUID-urile existente. Această densitate nouă trebuie verificată în proba manuală; rezultatele runtime de mai sus au fost obținute înaintea creșterii densității.
+
+## Integrare feature/survival-hud
+
+Branch remote: 1f951d72ee7012ef16657c42e4498b1e4838f927
+
+Conflictele au fost rezolvate păstrând TerrainData din integrarea elina1, împreună cu setările de vegetație cerute. Scena Unity a fost combinată după ID-urile obiectelor: SurvivalSystem, HUD, EventSystem și volumul critic coexistă cu luna, soarele și Manager_Ceata.
+
+Verificări în Unity Play Mode:
+
+PASS: single SurvivalManager
+PASS: initial HP/hunger/stamina 5/3/3
+PASS: HUD and XR references present
+PASS: critical effects and Game Over present
+PASS: hunger timer consumes one segment
+PASS: starvation consumes HP
+PASS: 1 HP triggers critical state
+PASS: healing clears critical state
+PASS: 0 HP triggers death
+PASS: death disables locomotion
+PASS: reset restores survival state
+PASS: reset restores locomotion
+PASS: requested environment settings retained
+PASS: terrain route and checkpoints generated
+PASS: day-night, fog, compass retained
+PASS: no missing scripts
+
+HUD-ul a fost confirmat vizual în Game View, cu viață/stamină/foame. Nu au apărut erori noi de compilare C#. Testele de logică au invocat API-urile de survival și timerele programatic. Sprint-ul prin tastatură/controller, butonul de restart și confortul efectelor pe cască rămân pentru verificarea manuală. Scriptul temporar a fost mutat în Backups/SurvivalMergeValidation-2026-11-23, în afara Assets. Integrarea rămâne locală.
