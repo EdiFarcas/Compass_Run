@@ -34,6 +34,12 @@ namespace CompassRun.Checkpoints
             IsCompleted = true;
             RefreshIndicator();
             Debug.Log("Checkpoint validat: " + CheckpointId, this);
+
+            if (CheckpointId.ToString() == "CP1")
+            {
+                GameObject.Find("Manager_Ceata")?.SendMessage("MarcheazaCP1Validat", SendMessageOptions.DontRequireReceiver);
+            }
+
             onValidated.Invoke();
         }
         /// <summary>Starts a new attempt. Removing the ring alone does not undo a visited checkpoint.</summary>
