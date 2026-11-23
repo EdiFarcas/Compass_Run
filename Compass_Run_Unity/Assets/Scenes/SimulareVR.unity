@@ -376,7 +376,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -150, y: 0, z: -150}
-  m_LocalScale: {x: 100, y: 0, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4630,16 +4630,46 @@ MonoBehaviour:
   trailWidth: 1.5
   pathLayerIndex: 1
   startClearingRadius: 15
-  waterPrefab: {fileID: 0}
+  rockLayerIndex: 2
+  rockStartHeight: 24
+  rockBlendRange: 6
+  borderRockPrefabs:
+  - {fileID: 1899658803233297863, guid: 5f5ff8953ebc2b14e93f9c1ab7cce246, type: 3}
+  - {fileID: 4030783830249172187, guid: b356054ae213e4c46aed9aa632df1810, type: 3}
+  - {fileID: 8394424145546492890, guid: e50124c9152a7c844a3a1d83ded10153, type: 3}
+  borderRockSpacing: 10
+  borderRockScale: {x: 4, y: 7}
+  borderRockSinkDepth: 2
+  addInvisibleBoundaryWalls: 1
+  waterPrefab: {fileID: 3669502052993792409, guid: c482d332508309d41880432f09e797f0, type: 3}
   waterLevel: 6
+  lakeCount: 2
+  lakeRadius: {x: 22, y: 35}
+  lakeDepth: 4.5
+  lakeShoreBlend: 14
   treePrefabs:
-  - {fileID: 919132149155446097, guid: 29ec50b185599f24d8c81f03eef3ec61, type: 3}
-  - {fileID: 919132149155446097, guid: 6bbe706ca968a00448a73a89911a7031, type: 3}
-  - {fileID: 919132149155446097, guid: 3e1e8bb939a7c354cae552de0c151f68, type: 3}
-  - {fileID: 919132149155446097, guid: a68e873385a05f94382d5de6fd07dfbf, type: 3}
-  treeCount: 0
-  grassTexture: {fileID: 2800000, guid: d56b51d4fbf86ef4eaff7fcf38fb0e89, type: 3}
-  grassDensity: 4
+  - {fileID: 8125826686420605830, guid: aed23224de7b14947ad004c65b7fd75b, type: 3}
+  - {fileID: 2534985353366469434, guid: 521a291a4b0576d4493d6bc120fa5da4, type: 3}
+  - {fileID: 8635182375784086607, guid: e0e9e3adb83d9ca4c8325210b7cb6b7e, type: 3}
+  treeCount: 600
+  trailSideTrees: 250
+  minTreeDistFromTrail: 2.6
+  maxTrailSideDist: 6.5
+  grassPrefab: {fileID: 4066729445286633768, guid: 0708f3fff5c2989419f887025f5b250c, type: 3}
+  grassCount: 15000
+  grassScale: {x: 1.5, y: 2.5}
+  grassYOffset: -0.15
+  bushPrefabs:
+  - {fileID: 5131822714061777542, guid: af6679b6119c02a4cbcd9c6e43c7a907, type: 3}
+  - {fileID: 4308898472460551513, guid: df1a62491df7dfa46a3f5c12dfada00a, type: 3}
+  bushCount: 350
+  bushScale: {x: 0.8, y: 1.4}
+  bushYOffset: -0.1
+  minBushDistFromTrail: 2
+  willowPrefab: {fileID: 0}
+  maxWillows: 20
+  willowMaxHeightAboveWater: 2.5
+  willowChanceNearWater: 0.85
   playerRig: {fileID: 90887035}
   moveToStart:
   - {fileID: 964315889}

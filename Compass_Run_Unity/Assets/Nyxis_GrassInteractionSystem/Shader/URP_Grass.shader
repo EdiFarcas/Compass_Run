@@ -178,6 +178,7 @@ SubShader
 
         float height : TEXCOORD2;
         float2 uv     : TEXCOORD3;
+        float fogFactor : TEXCOORD4;
 
         UNITY_VERTEX_INPUT_INSTANCE_ID
     };
@@ -241,6 +242,8 @@ SubShader
                 worldPos
             );
 
+
+        OUT.fogFactor = ComputeFogFactor(OUT.positionCS.z);
 
         return OUT;
     }
@@ -392,6 +395,8 @@ SubShader
                 SampleSH(normal);
 
 
+            // Respect sun/moon intensity so the grass also becomes dark at night.
+            finalColor *= mainLight.color * mainLight.distanceAttenuation;
             finalColor +=
                 ambient *
                 grassColor *
@@ -399,10 +404,8 @@ SubShader
 
 
 
-            float fogFactor =
-                ComputeFogFactor(
-                    IN.positionCS.z
-                );
+            // SV_POSITION.z in the fragment stage is device depth, not clip-space depth.
+            float fogFactor = IN.fogFactor;
 
 
             finalColor =
