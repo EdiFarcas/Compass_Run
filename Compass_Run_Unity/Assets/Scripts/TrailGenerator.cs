@@ -12,6 +12,7 @@ public class Trail
 
 public class TrailGenerator : MonoBehaviour
 {
+    public event System.Action Generated;
     [Header("Seed & dimensiuni")]
     public int seed = 0;                 // 0 = aleator la fiecare rulare
     public float areaSize = 250f;        // zona jucabilă (m)
@@ -134,6 +135,7 @@ public class TrailGenerator : MonoBehaviour
         BuildBoundaryWalls();
         PlaceStartArea();
         SpawnProps();
+        Generated?.Invoke();
     }
 
     void PlaceStartArea()

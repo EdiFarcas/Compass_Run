@@ -6047,6 +6047,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37720d1f0bb060543af7793a74c3b4ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1360874853}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37720d1f0bb060543af7793a74c3b4ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1360874854}
     - targetCorrespondingSourceObject: {fileID: 3268924741576932934, guid: 37720d1f0bb060543af7793a74c3b4ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1134525226}
@@ -8619,3 +8622,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1066135316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1360874854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519354262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16ca92bb3e9045bd9ad1b7ed85a5407, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::HandheldTrailMap
+  generator: {fileID: 843427743}
+  resolution: 1024
