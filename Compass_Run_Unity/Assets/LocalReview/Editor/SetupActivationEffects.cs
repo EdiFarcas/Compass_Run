@@ -15,7 +15,12 @@ public static class SetupActivationEffects
         if(Application.isPlaying||(EditorSceneManager.GetActiveScene().name!="SimulareVR_Local" && EditorSceneManager.GetActiveScene().name!="SimulareVR"))return;
         var whistle=Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None).FirstOrDefault(g=>g.name=="Fluier");
         var spray=Object.FindObjectsByType<XRGrabInteractable>(FindObjectsSortMode.None).FirstOrDefault(g=>g.name=="Spray_Ursi");
-        if(!whistle||!spray||spray.transform.Find("Spray_Fum"))return;
+        if(!whistle||!spray)return;
+        if(spray.transform.Find("Spray_Fum"))
+        {
+            if(EditorSceneManager.GetActiveScene().name=="SimulareVR")RepairInteractionFeedback.Repair();
+            return;
+        }
         var clip=AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/LocalReview/Effects/Fluier.wav");if(!clip)return;
         Undo.IncrementCurrentGroup();Undo.SetCurrentGroupName("Whistle and spray activation");
         var sound=new GameObject("Fluier_Sunet");Undo.RegisterCreatedObjectUndo(sound,"Whistle sound");sound.transform.SetParent(whistle.transform,false);
